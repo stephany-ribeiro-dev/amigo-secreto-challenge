@@ -16,8 +16,8 @@ function textoInicial() {
     exibirTexto('h2', 'Digite o nome dos seus amigos');
 
 }
-
 textoInicial();
+
 function adicionarAmigo() {
 
     const amigo = document.querySelector('input').value;
