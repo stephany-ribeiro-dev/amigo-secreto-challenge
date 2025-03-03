@@ -14,7 +14,6 @@ function adicionarAmigo() {
         return;
     } else {
         listaAmigos.push(amigo);
-        console.log(listaAmigos);
         exibirAmigos();
         limparCampo();
     }
