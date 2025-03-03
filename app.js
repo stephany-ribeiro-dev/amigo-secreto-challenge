@@ -2,8 +2,7 @@ const listaAmigos = [];
 
 function adicionarAmigo() {
 
-    const amigo = document.querySelector('input').value;
-    console.log(amigo);
+    const amigo = document.getElementById('amigo').value;
 
     if (amigo === "") {
         alert('Por Favor, insira um nome.');
@@ -42,11 +41,11 @@ function sortearAmigo() {
     const indiceAleatorio = Math.floor(Math.random() * listaAmigos.length);
     const amigoSorteado = listaAmigos[indiceAleatorio];
 
-    document.getElementById('resultado').innerHTML = `<p>Amigo sorteado: ${amigoSorteado}</p>`;
+    document.getElementById('resultado').innerHTML = `<li>Amigo sorteado: ${amigoSorteado}</li>`;
 }
 
 function limparCampo() {
-    amigo = document.querySelector('input');
+    amigo = document.getElementById('amigo');
     amigo.value = '';
 }
 
