@@ -6,9 +6,16 @@ function adicionarAmigo() {
     console.log(amigo);
 
     if (amigo === "") {
+
         alert('Por Favor, insira um nome.');
         return;
+    } else if (listaAmigos.includes(amigo)) {
+
+        alert('Este amigo já foi adicionado.');
+        limparCampo();
+        return;
     } else {
+        
         listaAmigos.push(amigo);
         console.log(listaAmigos);
         exibirAmigos();
@@ -22,7 +29,7 @@ function exibirAmigos() {
     lista.innerHTML = '';
 
     for (let i = 0; i < listaAmigos.length; i++) {
-        
+
         const amigo = listaAmigos[i];
         const itemLista = document.createElement('li');
         itemLista.textContent = amigo;
@@ -33,13 +40,13 @@ function exibirAmigos() {
 function sortearAmigo() {
 
     if (listaAmigos.length === 0) {
-      alert('Adicione amigos antes de sortear.');
-      return;
+        alert('Adicione amigos antes de sortear.');
+        return;
     }
-  
+
     const indiceAleatorio = Math.floor(Math.random() * listaAmigos.length);
     const amigoSorteado = listaAmigos[indiceAleatorio];
-  
+
     document.getElementById('resultado').innerHTML = `<p>Amigo sorteado: ${amigoSorteado}</p>`;
 }
 
