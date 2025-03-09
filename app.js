@@ -24,13 +24,33 @@ function exibirAmigos() {
     lista.innerHTML = '';
 
     for (let i = 0; i < listaAmigos.length; i++) {
+
         const amigo = listaAmigos[i];
+        const itemDiv = document.createElement('div');
+        lista.appendChild(itemDiv);
+
         const itemLista = document.createElement('li');
         itemLista.textContent = amigo;
-        lista.appendChild(itemLista);
+        itemDiv.appendChild(itemLista);
+
+        const buttonEdit = document.createElement('button');
+        buttonEdit.textContent = 'editar';
+        buttonEdit.className = 'button-edit';
+        buttonEdit.onclick = editarAmigo;
+        buttonEdit.id = i;
+        itemDiv.appendChild(buttonEdit);
     }
 }
 
+function editarAmigo(event) {
+
+    const editAmigo = prompt('edite o nome do amigo:');
+    
+    
+    exibirAmigos();
+    console.log(event.srcElement);
+
+}
 function sortearAmigo() {
 
     if (listaAmigos.length === 0) {
