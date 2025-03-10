@@ -6,6 +6,7 @@
     --color-button-hover: #e55720;
     --color-text: #444444;
     --color-white: #FFFFFF;
+    --color-blue: #247fff; 
 }
 
 /* Estilos gerais */
@@ -127,7 +128,10 @@ button {
 
 /* Listas */
 ul {
-    list-style-type: none;
+    
+    flex-direction: column;
+    align-items:end;
+    list-style-type:none;
     color: var(--color-text);
     font-family: "Inter", sans-serif;
     font-size: 18px;
@@ -139,7 +143,7 @@ ul {
     color: #05DF05;
     font-size: 22px;
     font-weight: bold;
-    text-align: center;
+    text-align:center;
 }
 
 /* Botão de sortear título */
@@ -159,4 +163,45 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+/* Botão de editar amigo*/
+.name-list {
+    /* display:flex; */
+    align-items: center;
+    gap: 30px;
+}
+
+.button-edit {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 20px;
+    color: var(--color-white);
+    background-color: var(--color-blue);
+    font-size: 10px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.button-edit:hover {
+  
+    background-color: #a1a1a1;
+}
+
+.button-delete {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 20px;
+    color: var(--color-white);
+    background-color: var(--color-button);
+    font-size: 10px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.button-delete:hover {
+  
+    background-color: #a1a1a1;
 }
