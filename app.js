@@ -36,21 +36,19 @@ function exibirAmigos() {
         const buttonEdit = document.createElement('button');
         buttonEdit.textContent = 'editar';
         buttonEdit.className = 'button-edit';
-        buttonEdit.onclick = editarAmigo;
-        buttonEdit.id = i;
-        itemDiv.appendChild(buttonEdit);
+        buttonEdit.addEventListener("click", () => editarAmigo(i));
+        lista.appendChild(buttonEdit);
     }
 }
 
-function editarAmigo(event) {
+function editarAmigo(input) { 
+	const novoNome = prompt('Digite o novo nome do amigo:'); 
+	
+		listaAmigos[input] = novoNome; 
+		exibirAmigos(); 
+} 
 
-    const editAmigo = prompt('edite o nome do amigo:');
-    
-    
-    exibirAmigos();
-    console.log(event.srcElement);
 
-}
 function sortearAmigo() {
 
     if (listaAmigos.length === 0) {
