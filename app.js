@@ -37,16 +37,29 @@ function exibirAmigos() {
         buttonEdit.textContent = 'editar';
         buttonEdit.className = 'button-edit';
         buttonEdit.addEventListener("click", () => editarAmigo(i));
-        lista.appendChild(buttonEdit);
+        itemDiv.appendChild(buttonEdit);
     }
 }
 
 function editarAmigo(input) { 
 	const novoNome = prompt('Digite o novo nome do amigo:'); 
-	
-		listaAmigos[input] = novoNome; 
+    	
+    if ( novoNome.trim() === ""){
+
+        alert('Insira um novo nome valido');
+    } else { 
+
+        listaAmigos[input] = novoNome; 
 		exibirAmigos(); 
+    }
 } 
+
+function deletarAmigo(input) {
+    
+    listaAmigos.splice(input, 1);
+    exibirAmigos();
+    console.log(listaAmigos)
+}
 
 
 function sortearAmigo() {
